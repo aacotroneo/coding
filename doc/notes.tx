@@ -1,0 +1,74 @@
+Limits:
+time - 1 sec = 10^8
+int - 2×10^9
+long long - 2×10^18
+There are n! permutations and 2n subsets (or combinations) of n elements.
+
+http://cp-algorithms.com/
+https://github.com/stevenhalim/cpbook-code/
+ topics: vectors, bit manipulations,
+
+ common stl DS
+ stl::vector: reserve(), clear(), resize(), lower_bound()
+ stl::map: (BST, but we can not augment it.. need to use custom in that case)
+ stl::priority_queue:
+ UnionFindDisjointSets: connected components
+ SegmentTree: min/max/sum over a range
+
+ Strategies:
+ https://github.com/stevenhalim/cpbook-code/tree/master/ch3
+  - Brute Force:
+   -- iterative (easy to traverse) vs backtracking (complex states, pruning)
+   -- try generating valid cases rather than all and then filter
+   -- prune early
+   -- think "backwards" (rat-bombs problem)
+  - Divide and Conquer:
+   - most of the time binary search
+   - binary search/bisect solutions (that need X precision)
+  - Greedy:
+   -- optimal substructure (subproblems have same optimal solution)
+   -- greedy property: best choice to advance it stays the best (no backtrack)
+   -- does sorting help?
+  - Dynamic Programming
+   -- optimal substructure & overlapping subproblems
+   -- usually optimization or counting problems
+    --- Top Down: recursive + DP[state] memo
+    --- Bottom Up: 
+          * determine the state (same as before)
+          * create 1 dimmenstion per parameter that defines the state (we only initialize base cases, not all like before)
+          * fill next states based on the previous ones
+          * Note: sometimes we can save space (by using 2 rows, or updating the same if we can)
+   - Classical examples (https://github.com/stevenhalim/cpbook-code/tree/master/ch3/dp)
+   -- Max 1D/2D range sum (n and n^4 WITH DP - n3 optimized )
+   -- Longest Increasing Subsequence (n^2 or nlogk)
+   -- 0-1 Knapsack (Subset Sum) (n*S)
+   -- Coin Change (CC) (nV)
+   -- Traveling Salesman Problem (TSP)
+
+
+Graphs   
+
+# DFS O(V + E)  
+Pros Usually use less memory 
+Can find articulation points, bridges, SCC
+Slightly easier to code
+
+# BFS O(V + E) 
+Can solve SSSP (on unweighted graphs)
+Usually use more memory (bad for large graph)
+
+ Problem types:
+ * Just Graph Traversal
+ * Flood Fill/Finding Connected Components
+ * Topological Sort
+ * Bipartite Graph Check
+ * Finding Articulation Points/Bridges
+ * Finding Strongly Connected Components
+
+ Minimum Spanning Tree
+-- Kruskal: (sort edge + union find)
+-- Prim
+
+
+
+big fractions tip: logartihm!
